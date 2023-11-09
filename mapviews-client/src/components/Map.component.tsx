@@ -4,7 +4,7 @@ import { GoogleMap } from "@capacitor/google-maps";
 import MarkerDetails from "./MarkerDetails.component";
 import { MarkerClickCallbackData } from "@capacitor/google-maps/dist/typings/definitions";
 //TODO: retrieve the API key from the environment variable
-const apiKey = process.env.MAP_API_KEY; //AIzaSyAl5SSekPOEGnXjy9861NbTCn8XL2KRcLU
+const apiKey = "AIzaSyAl5SSekPOEGnXjy9861NbTCn8XL2KRcLU";
 
 export interface InspectionRecord {
   //mongo DB id
@@ -129,7 +129,7 @@ const Map: React.FC<ContainerProps> = ({ name, inspectionData }) => {
         const newMap = await GoogleMap.create({
           id: "my-map",
           element: mapRef.current,
-          apiKey: apiKey!,
+          apiKey: apiKey,
           config: {
             center: {
               lat: 1.3521,
