@@ -2,16 +2,22 @@ import { Request, Response } from "express";
 import { getCollections } from "../db/mongoDB.collections.db";
 
 const getInspectionHandler = async (req: Request, res: Response) => {
-  console.log("request in");
-  const { inspectionType } = req.query;
-  const records = await getCollections("InspectionRecords", { inspectionType });
+  const { inspectionType, block, estate, inspector, offset, limit } = req.query;
+  // Create an object with only defined parameters
+  const queryParams = {};
+  const limits = { offset, limit };
+  if (inspectionType) Object.assign(queryParams, { inspectionType });
+  if (block) Object.assign(queryParams, { block });
+  if (estate) Object.assign(queryParams, { estate });
+  if (inspector) Object.assign(queryParams, { inspector });
+
+  const records = await getCollections(
+    "InspectionRecords",
+    queryParams,
+    limits
+  );
   res.json(records);
-  //   let dbConnect = getDb();
-  //   const records = await dbConnect
-  //     .collection("InspectionRecords")
-  //     .find({})
-  //     .toArray();
-  //   res.json(records);
+
   return;
 };
 
