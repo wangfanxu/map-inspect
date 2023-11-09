@@ -19,7 +19,6 @@ const connectToServer = async () => {
 };
 
 const getDb = () => {
-  console.log("db", _db);
   return _db;
 };
 
