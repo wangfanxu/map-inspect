@@ -3,7 +3,7 @@ import "./ExploreContainer.css";
 import { GoogleMap } from "@capacitor/google-maps";
 import MarkerDetails from "./MarkerDetails.component";
 import { MarkerClickCallbackData } from "@capacitor/google-maps/dist/typings/definitions";
-//TODO: retrieve the API key from the environment variable
+//TODO: store in Github env or secret manager
 const apiKey = "AIzaSyAl5SSekPOEGnXjy9861NbTCn8XL2KRcLU";
 
 export interface InspectionRecord {
