@@ -1,0 +1,16 @@
+
+/* Add this CSS to your styles.css or a separate stylesheet */
+.filter-row {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust the gap as needed to add space between filters */
+  }
+  
+  /* Style individual filter elements */
+  .filter-row ion-select,
+  .filter-row ion-input,
+  .filter-row ion-datetime {
+    flex: 1; /* Distribute available space equally among filters */
+    max-width: 200px; /* Adjust the maximum width as needed */
+  }
+  
